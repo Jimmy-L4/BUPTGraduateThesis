@@ -32,7 +32,7 @@ REM 'xetex' for xetex engine;
 set DRIVER=xetex
 REM Bib type to construct bibliography.
 REM 'chapbib' for bib per chapter; 'allbib' for bib in thesis end.
-set BIBTYPE=chapbib
+set BIBTYPE=allbib
 REM --------------------------------------------------------------------------
 REM Main Function Selection
 
