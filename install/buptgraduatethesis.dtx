@@ -1995,13 +1995,13 @@
   \or
   \def\bupt@page@head{北京邮电大学硕士学位论文}
   \def\bupt@label@covertitle{硕士学位论文（学术学位）}
-  \def\bupt@label@ecovertitle{Thesis for Master Degree}
+  \def\bupt@label@ecovertitle{Master Dissertation}
   \def\bupt@label@cmajor{学科专业}
   \def\bupt@label@emajor{Subject}
   \or
   \def\bupt@page@head{北京邮电大学硕士学位论文}
   \def\bupt@label@covertitle{硕士学位论文（专业学位）}
-  \def\bupt@label@ecovertitle{Thesis for Master Degree}
+  \def\bupt@label@ecovertitle{Master Dissertation}
   \def\bupt@label@cmajor{学科专业}
   \def\bupt@label@emajor{Subject}
   \or
@@ -2259,7 +2259,7 @@
       \setlength{\extrarowheight}{0pt}
       \setlength{\arrayrulewidth}{0.5bp}
       \begin{tabular}{r p{110mm}}
-        \bupt@label@etitle~\bupt@title@esep & %
+         & %
         \parbox[t]{110mm}{%
           \centering%
           \renewcommand\titlebreak{\\\global\let\bupt@long@title\@empty}
@@ -2511,7 +2511,7 @@
   \bupt@chapter*[\bupt@label@cabstract]%
   {\bupt@label@cabstract}%
   [\xiaosan\hei]%
-  [\centering\sanhao\bupt@meta@ctitle]
+  []
   {
     \sihao[1.6]
     \par{
@@ -2519,13 +2519,13 @@
       \song\bupt@meta@cabstract
     }\par
     \vspace{12bp}
-    \setbox0=\hbox{{\hei \bupt@label@ckeywords}}
+    \setbox0=\hbox{\hspace{2em}{\hei \bupt@label@ckeywords}}
     \noindent\hangindent\wd0\hangafter1\box0\bupt@meta@ckeywords
   }
   \bupt@chapter*[\bupt@label@eabstract]%
   {\bupt@label@eabstract} % no tocline
   [\xiaosan]
-  [\centering\sanhao\textbf{\MakeUppercase\bupt@meta@etitle}] % 此处控制英文摘要标题的字体
+  [] % 此处控制英文摘要标题的字体
   {    
     \sihao[1.5]
     \par{%
@@ -2533,7 +2533,7 @@
       \bupt@meta@eabstract
     }\par
     \vspace{24bp}
-    \setbox0=\hbox{\textbf{KEY WORDS:\enskip}}
+    \setbox0=\hbox{\hspace{2em}\textbf{KEY WORDS:}}
     \noindent\hangindent\wd0\hangafter1\box0\bupt@meta@ekeywords
   }
 }
@@ -4009,12 +4009,12 @@ FUNCTION {inproceedings} {
   generate.bibitem.begin
 
   format.authors "author" output.w.warning
-  format.title "[A]" "title" output.w.appendix.w.warning
+  format.title "[C]" "title" output.w.appendix.w.warning
   booktitle empty$
   { "booktitle is empty in " cite$ *
     warning$
   }
-  { punc.parallel format.booktitle * "[C]" * output.wo.warning }
+  { punc.parallel format.booktitle * "" * output.wo.warning }
   if$
 
   format.address.publisher.year.pages output.wo.warning
@@ -4458,8 +4458,7 @@ EXECUTE { show.banner.end }             % 显示完成提示信息
 }
 
 %% 英文关键词，关键字用半角分号(;)分隔
-\ekeywords{%
-  \TeX; \LaTeX; xeCJK; template; typesetting; thesis}
+\ekeywords{\TeX; \LaTeX; xeCJK; template; typesetting; thesis}
 %</metadata>
 % 
 % \subsection{pubs.tex}
