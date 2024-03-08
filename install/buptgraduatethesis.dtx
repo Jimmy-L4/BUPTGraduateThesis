@@ -1451,21 +1451,21 @@
 }
 \renewcommand\section{%
   \@startsection {section}{1}{\z@}%
-  {-24bp \@plus -1ex \@minus -.2ex}%
+  {-11bp \@plus -1ex \@minus -.2ex}%
   {6bp \@plus .2ex}%
-  {\bfseries\csname bupt@title@font\endcsname\sihao[1.429]}% 此处控制section标题的字体
+  {\bfseries\csname bupt@title@font\endcsname\sihao}% 此处控制section标题的字体
 }
 \renewcommand\subsection{%
   \@startsection{subsection}{2}{\z@}%
-  {-16bp \@plus -1ex \@minus -.2ex}%
-  {6bp \@plus .2ex}%
-  {\bfseries\csname bupt@title@font\endcsname\xiaosi[1.538]}% 此处控制subsection标题的字体
+  {-6bp \@plus -1ex \@minus -.2ex}%
+  {1bp \@plus .2ex}%
+  {\bfseries\csname bupt@title@font\endcsname\xiaosi}% 此处控制subsection标题的字体
 }
 \renewcommand\subsubsection{%
   \@startsection{subsubsection}{3}{\z@}%
-  {-16bp \@plus -1ex \@minus -.2ex}%
-  {6bp \@plus .2ex}%
-  {\song\csname bupt@title@font\endcsname\xiaosi[1.667]}%
+  {-6bp \@plus -1ex \@minus -.2ex}%
+  {1bp \@plus .2ex}%
+  {\song\csname bupt@title@font\endcsname\xiaosi}%
 }
 %</cls>
 %    \end{macrocode}
@@ -1509,15 +1509,15 @@
   \@makechapterhead{#2}
 }
 \def\@makechapterhead#1{%
-  \vspace*{20bp}%
+  \vspace*{0bp}%
   {%
     \parindent \z@ \centering
-    \bfseries\csname bupt@title@font\endcsname\sanhao[1] % 此处控制正文的章标题以及附录标题
+    \bfseries\csname bupt@title@font\endcsname\sanhao % 此处控制正文的章标题以及附录标题
     \ifnum \c@secnumdepth >\m@ne
     \@chapapp\hskip1em
     \fi
     #1\par\nobreak
-    \vskip 24bp
+    \vskip 32bp
   }
 }
 \def\@schapter#1{%
@@ -1533,18 +1533,18 @@
   \@makeschapterhead{#1}
   \@afterheading}
 \def\@makeschapterhead#1{%
-  \vspace*{20bp}%
+  \vspace*{0bp}%
   {%
     \parindent \z@ \centering
     \bfseries\csname bupt@title@font\endcsname % 此处控制<摘要><abstract><目录><符号对照表><致谢><发表文章>的标题
     \ifx\bupt@schapterformat\empty
-    \sanhao[1]
+    \sanhao
     \else
     \bupt@schapterformat
     \fi
     \interlinepenalty\@M
     #1\par\nobreak
-    \vskip 24bp%
+    \vskip 32bp%
   }
 }
 \def\bupt@chapter*{%
@@ -1763,27 +1763,27 @@
     \@percentchar\@percentchar BeginPaperSize: a4
     ^^Ja4^^J\@percentchar\@percentchar EndPaperSize}}
 \setlength{\hoffset}{-1in}
-\addtolength{\hoffset}{5mm}           % 装订线: 1in + \hoffset = 5mm
+\addtolength{\hoffset}{0mm}           % 装订线: 1in + \hoffset = 5mm
 \setlength{\voffset}{-1in}            %
 \setlength\marginparwidth{0mm}        %
 \setlength\marginparsep{0mm}          %
 \setlength{\textwidth}{\paperwidth}   %
-\addtolength{\textwidth}{-55mm}       % 版芯宽度: 155mm = 210mm - 55mm
-\setlength{\oddsidemargin}{22.5mm}    % 内侧页边距: 奇数页左侧页边距
-\setlength{\evensidemargin}{22.5mm}   % 外侧页边距: 偶数页左侧页边距 
+\addtolength{\textwidth}{-63.4mm}       % 版芯宽度: 155mm = 210mm - 55mm
+\setlength{\oddsidemargin}{31.7mm}    % 内侧页边距: 奇数页左侧页边距
+\setlength{\evensidemargin}{31.7mm}   % 外侧页边距: 偶数页左侧页边距 
 \setlength{\textheight}{\paperheight} %
 \setlength{\headheight}{20pt}         % 页眉高度: 20pt
 \setlength{\topskip}{0pt}             % 
 \setlength{\skip\footins}{15pt}       %
-\setlength{\topmargin}{25mm}          % 上边距: 25 mm (原为30mm)
-\setlength{\footskip}{15mm}           %
-\setlength{\headsep}{5mm}             %
-\addtolength{\textheight}{-77mm}      % 文字高度:  297mm (纸张高度)
-                                      %          - 25mm (上边距) 
+\setlength{\topmargin}{15.4mm}          % 上边距: 25 mm (原为30mm)
+\setlength{\footskip}{7.9mm}           %
+\setlength{\headsep}{3mm}             %
+\addtolength{\textheight}{-50.8mm}    % 文字高度:  297mm (纸张高度)
+                                      %          - 15.4mm (上边距) 
                                       %          -  7mm (\headerheight, 20pt) 
                                       %          -  5mm (\headsep)
-                                      %          - 15mm (\footskip)
-                                      %          - 25mm (下边距)
+                                      %          - 7.9mm (\footskip)
+                                      %          - 15.4mm (下边距)
 %    \end{macrocode}
 %
 % 论文分为前置部分、主体部分和结尾部分。其中，前置部分包括封面、封二、
@@ -1995,13 +1995,13 @@
   \or
   \def\bupt@page@head{北京邮电大学硕士学位论文}
   \def\bupt@label@covertitle{硕士学位论文（学术学位）}
-  \def\bupt@label@ecovertitle{Master Dissertation}
+  \def\bupt@label@ecovertitle{Master Thesis}
   \def\bupt@label@cmajor{学科专业}
   \def\bupt@label@emajor{Subject}
   \or
   \def\bupt@page@head{北京邮电大学硕士学位论文}
   \def\bupt@label@covertitle{硕士学位论文（专业学位）}
-  \def\bupt@label@ecovertitle{Master Dissertation}
+  \def\bupt@label@ecovertitle{Master Thesis}
   \def\bupt@label@cmajor{学科专业}
   \def\bupt@label@emajor{Subject}
   \or
@@ -2148,16 +2148,16 @@
 \else
 \newcommand{\bupt@front@cover}{%
   \asong\bfseries
-  \vspace*{-1.15cm}
+  \vspace*{0.2cm}
   \begin{minipage}[t]{\textwidth}%右上角密级
     \sihao
     \raggedleft
     \ifnum\bupt@classlevel=0
-      \bupt@label@classlevel\bupt@title@sep\bupt@meta@classlevel
+      \bupt@label@classlevel\bupt@title@sep\bupt@meta@classlevel\quad
     \else
-      \bupt@label@classlevel\bupt@title@sep\bupt@meta@classlevel
+      \bupt@label@classlevel\bupt@title@sep\bupt@meta@classlevel\quad
     \fi
-  \end{minipage}\\[1.71cm]
+  \end{minipage}\\[1cm]
   \begin{minipage}[t]{\textwidth}%北京邮电大学、硕士（博士）学位论文、logo
     \centering
     \hspace{0.3cm}
@@ -2165,8 +2165,8 @@
     \vspace{0.24cm}
     \covertitlesize[1.0]{\ahei\bupt@label@covertitle}\par
     \vspace{0.95cm}
-    \includegraphics[width=3.09cm]{logo/buptseal}
-  \end{minipage}\\[1.4cm]
+    \includegraphics[width=3.44cm]{logo/buptseal}
+  \end{minipage}\\[1cm]
   \begin{minipage}[t]{\textwidth}%题目
     \centering
     \xiaoer[1.5]
@@ -2179,15 +2179,15 @@
       \parbox[t]{95mm}{%
         \centering%
         \renewcommand\titlebreak{\\\global\let\bupt@long@title\@empty}
-        \rule[-5bp]{95mm}{0.5bp}\\[-27bp]
+        \rule[-5bp]{95mm}{1bp}\\[-27bp]
         \bupt@meta@ctitle%
         \ifx\bupt@long@title\@empty
           \\[-27bp]%
-          \rule[-5bp]{95mm}{0.5bp}%
+          \rule[-5bp]{95mm}{1bp}%
         \else
           \ifdim\bupt@titlewidth>95mm
             \\[-27bp]%
-            \rule[-5bp]{95mm}{0.5bp}%
+            \rule[-5bp]{95mm}{1bp}%
           \fi
         \fi
       }%
@@ -2213,7 +2213,7 @@
       \bupt@label@cdepartment\bupt@title@sep & {\hfill\bupt@meta@cdepartment\hfill} \\
       [-3pt] \cline{2-2} \\
     \end{tabular}
-  \end{minipage}\\[0.7cm]
+  \end{minipage}\\[0.9cm]
   \begin{minipage}[ht]{\textwidth}%日期
     \centering
     {\sihao[1.0] \asong \bupt@meta@cdate}
@@ -2232,25 +2232,26 @@
   \ifnum\bupt@degree=3
     \relax
   \else
-  \asong\bfseries
-  \vspace*{-1.15cm}
-  \begin{minipage}[t]{\textwidth}%右上角密级
-    \sihao
-    \raggedleft
-    \ifnum\bupt@classlevel=0
-      \bupt@label@eclasslevel\bupt@title@sep\bupt@meta@eclasslevel
-    \else
-      \bupt@label@eclasslevel\bupt@title@sep\bupt@meta@eclasslevel
-    \fi
-  \end{minipage}\\[1.71cm]
+
+  \vspace*{1.5cm}
+  %\begin{minipage}[t]{\textwidth}%右上角密级
+  %  \sihao
+  %  \raggedleft
+  %  \ifnum\bupt@classlevel=0
+  %    \bupt@label@eclasslevel\bupt@title@sep\bupt@meta@eclasslevel
+  %  \else
+  %    \bupt@label@eclasslevel\bupt@title@sep\bupt@meta@eclasslevel
+  %  \fi
+  %\end{minipage}\\[1.71cm]
   \begin{center}
     \begin{minipage}[t]{\textwidth}%北京邮电大学、硕士（博士）学位论文、logo
 %      \vspace{2.5cm}
       \centering
       \includegraphics[width=15cm]{logo/bupt_en_name_and_seal}\par
       \vspace{1cm}
-      \ecovertitlesize[1.0]{\ahei\bupt@label@ecovertitle}\par
+      \ecovertitlesize[1.0]{\hei\bupt@label@ecovertitle}\par
     \end{minipage}\\[1.8cm]
+    \asong\bfseries
     \begin{minipage}[t]{\textwidth}%题目
       \centering
       \xiaoer[1.5]
@@ -2267,17 +2268,17 @@
             \bupt@meta@etitle
             \ifx \bupt@long@etitle\@empty
               \\[-54bp]%
-              \rule[-5bp]{110mm}{0.5bp}\\
-              \rule[-5bp]{110mm}{0.5bp}
+              \rule[-5bp]{110mm}{1bp}\\
+              \rule[-5bp]{110mm}{1bp}
             \else
               \\[-27bp]%
-              \rule[-5bp]{110mm}{0.5bp}
+              \rule[-5bp]{110mm}{1bp}
             \fi
           \else
-            \rule[-5bp]{110mm}{0.5bp}\\%
-            \rule[-5bp]{110mm}{0.5bp}\\[-54bp]%
+            \rule[-5bp]{110mm}{1bp}\\%
+            \rule[-5bp]{110mm}{1bp}\\[-54bp]%
             \bupt@meta@etitle\\[-27bp]%
-            \rule[-5bp]{110mm}{0.5bp}
+            \rule[-5bp]{110mm}{1bp}
           \fi
         }%
         \\%
@@ -2295,14 +2296,12 @@
         [-3pt] \cline{2-2} \\
         \bupt@label@emajor\bupt@title@esep & {\hfill\bupt@meta@emajor\hfill} \\
         [-3pt] \cline{2-2} \\
-        \bupt@label@etrainingmode\bupt@title@esep & {\hfill\bupt@hide{\bupt@meta@etrainingmode}\hfill} \\
-        [-3pt] \cline{2-2} \\
         \bupt@label@esupervisor\bupt@title@esep & {\hfill\bupt@hide{\bupt@meta@esupervisor}\hfill} \\
         [-3pt] \cline{2-2} \\
         \bupt@label@edepartment\bupt@title@esep & {\hfill\bupt@meta@edepartment\hfill} \\
         [-3pt] \cline{2-2} \\
       \end{tabular}
-    \end{minipage}\\[0.7cm]
+    \end{minipage}\\[1.5cm]
     \begin{minipage}[ht]{\textwidth}%日期
       \centering
         {\sihao[1.0] \asong \bupt@meta@edate}
@@ -2375,9 +2374,9 @@
 \newcommand{\bupt@committee}{%
   \cleardoublepage
   \begin{center}
-    \sanhao[1.0]\hei\bupt@committee@title
-  \end{center}
-  \input{committee}
+    \sanhao\hei\bupt@committee@title
+    \input{committee}
+  \end{center} 
   
 }
 
@@ -2412,12 +2411,12 @@
 %% 独创性声明与授权说明
 \newcommand{\bupt@declaration}{%
   \begin{center}
-    \sanhao[1.0]\hei\bupt@declaration@title
+    \sanhao\hei\bupt@declaration@title
   \end{center}
   \par{%
     \parindent\CJKtwospaces\bupt@declaration@body
   }
-  \vskip1.2cm
+  % \vskip1.2cm
   \par{%
     \parindent\CJKtwospaces
     \bupt@label@authorsigniture\bupt@underline[38mm]\relax
@@ -2427,19 +2426,19 @@
 }
 \newcommand{\bupt@authorization}{%
   \begin{center}
-    \sanhao[1.0]\hei\bupt@authorization@title
+    \sanhao\hei\bupt@authorization@title
   \end{center}
   \par{%
     \parindent\CJKtwospaces\bupt@authorization@body
   }
-  \vskip1.2cm
+  % \vskip1.2cm
   \par{%
     \parindent\CJKtwospaces
     \bupt@label@authorsigniture\bupt@underline[38mm]\relax
     \qquad
     \bupt@label@date\bupt@underline[38mm]\relax
   }%
-  \vskip1cm
+  % \vskip1cm
   \par{%
     \parindent\CJKtwospaces
     \bupt@label@supervisorsigniture\bupt@underline[38mm]\relax
@@ -2449,9 +2448,8 @@
 }
 \newcommand{\bupt@makedeclauth}{%
   \cleardoublepage
-  \vfill
   \bupt@declaration
-  \vfill
+  \vspace*{40bp}%
   \bupt@authorization
   \vfill
 }
@@ -2481,23 +2479,23 @@
   \begin{titlepage}
     \bupt@front@cover
     \bupt@front@ecover
-    \bupt@inside@front@cover
-    \ifnum\bupt@degree=3
-    \else
-      \ifnum\bupt@finish=2
-      \else
-      \ifbupt@class@committee
-      \bupt@committee
-      \fi
-      \bupt@makedeclauth
-      \fi
-    \fi
+    \bupt@inside@front@cover  
   \end{titlepage}
+  \begin{titlepage}
+    \ifnum\bupt@finish=2
+    \else
+    \ifbupt@class@committee
+    \bupt@committee
+    \fi
+    \bupt@makedeclauth
+    \fi
+  \end{titlepage} 
   \ifbupt@class@dedication
   \bupt@makededication
   \fi
   \cleardoublepage
   \normalsize
+  \phantomsection
   \bupt@makeabstract
   \let\@tabular\bupt@tabular%
   \tableofcontents
@@ -2511,9 +2509,9 @@
   \bupt@chapter*[\bupt@label@cabstract]%
   {\bupt@label@cabstract}%
   [\xiaosan\hei]%
-  []
+  [\quad]
   {
-    \sihao[1.6]
+    \sihao[1.428]
     \par{
       \CJKindent
       \song\bupt@meta@cabstract
@@ -2525,9 +2523,9 @@
   \bupt@chapter*[\bupt@label@eabstract]%
   {\bupt@label@eabstract} % no tocline
   [\xiaosan]
-  [] % 此处控制英文摘要标题的字体
+  [\quad] % 此处控制英文摘要标题的字体
   {    
-    \sihao[1.5]
+    \sihao[1.428]
     \par{%
       \CJKindent
       \bupt@meta@eabstract
