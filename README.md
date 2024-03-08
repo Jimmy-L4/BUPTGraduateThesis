@@ -19,7 +19,8 @@ v1.1：根据2023年北邮研究生院论文要求，本仓库同步修改以下
 * 添加培养方式字段 （training mode）
 2. 解决英文扉页密级显示中文的bug
 3. 添加学术委员会名单页面(committee)：bear_thesis.tex 中指定是否添加学术委员会名单页面，install后生成 committee.tex文件
-
+附:
+* 如果使用windows VSCode，可以参考以下配置[Visual Studio Code (vscode)配置LaTeX](https://zhuanlan.zhihu.com/p/166523064)
 以下是原仓库README内容：
 
 About
