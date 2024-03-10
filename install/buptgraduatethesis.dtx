@@ -2956,6 +2956,7 @@ ENTRY {
   address         % 出版地/专利国别
   author          % 作者/申请者/责任者
   booktitle       % 专著名/论文集名/报纸名
+  journal         % 期刊名
   date            % 日期
   edition         % 版本
   editor          % 编者
@@ -3593,14 +3594,14 @@ FUNCTION {format.edition} {
   if$
 }
 
-% 排版 booktitle, year, volume(number): pages 域
+% 排版 journal, year, volume(number): pages 域
 % output：栈顶1元素
-% 将 booktitle、year、volume、number 和 pages 域整理后压栈，遇到空缺就输出相关区域空白的信息
+% 将 journal、year、volume、number 和 pages 域整理后压栈，遇到空缺就输出相关区域空白的信息
 % 同时判断是否为分期或非连续页期刊文章并进行相应处理
-FUNCTION {format.booktitle.year.volume.number.pages} {
+FUNCTION {format.journal.year.volume.number.pages} {
   ""
-  booktitle empty$
-  { "booktitle is empty in " cite$ *
+  journal empty$
+  { "journal is empty in " cite$ *
     warning$
     year empty$
     { "year is empty in " cite$ *
@@ -3612,9 +3613,9 @@ FUNCTION {format.booktitle.year.volume.number.pages} {
   { year empty$
     { "year is empty in " cite$ *
       warning$
-      booktitle *
+      journal *
     }
-    { booktitle * punc.comma * year * }
+    { journal * punc.comma * year * }
     if$
   }
   if$
@@ -3974,13 +3975,13 @@ FUNCTION {book} {
 
 % 期刊
 % [序号] 作者. 论文题目[J]. 刊名, 年, 卷号(期号): 页码范围{, 非连续页或分期期刊的分期信息}.{ note.}
-% [] author. title[J]. booktitle, year, volume(number): pages{, multiseriesmsg}.{ note.}
+% [] author. title[J]. journal, year, volume(number): pages{, multiseriesmsg}.{ note.}
 FUNCTION {article} {
   generate.bibitem.begin
 
   format.authors "author" output.w.warning
   format.title "[J]" "title" output.w.appendix.w.warning
-  format.booktitle.year.volume.number.pages output.wo.warning
+  format.journal.year.volume.number.pages output.wo.warning
   format.note output.wo.warning
 
   generate.bibitem.end  
