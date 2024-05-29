@@ -1527,10 +1527,11 @@
   \@afterindenttrue%
   \ifx\bupt@preschapter\empty
     \relax
+    \@makeschapterhead{#1}
   \else
-    \bupt@preschapter
+    % \bupt@preschapter
+    \@makeabstractschapterhead{#1} % 中文摘要标题格式特殊
   \fi
-  \@makeschapterhead{#1}
   \@afterheading}
 \def\@makeschapterhead#1{%
   \vspace*{0bp}%
@@ -1545,6 +1546,21 @@
     \interlinepenalty\@M
     #1\par\nobreak
     \vskip 32bp%
+  }
+}
+\def\@makeabstractschapterhead#1{%
+  \vspace*{0bp}%
+  {%
+    \parindent \z@ \centering
+    \bfseries\csname bupt@title@font\endcsname % 此处控制<摘要>标题
+    \ifx\bupt@schapterformat\empty
+    \sanhao
+    \else
+    \bupt@schapterformat
+    \fi
+    \interlinepenalty\@M
+    #1\par\nobreak
+    \vskip 16bp%
   }
 }
 \def\bupt@chapter*{%
@@ -2509,7 +2525,7 @@
   \bupt@chapter*[\bupt@label@cabstract]%
   {\bupt@label@cabstract}%
   [\xiaosan\hei]%
-  [\quad]
+  [\centering\sanhao\bupt@meta@ctitle]
   {
     \sihao[1.428]
     \par{
@@ -2523,7 +2539,7 @@
   \bupt@chapter*[\bupt@label@eabstract]%
   {\bupt@label@eabstract} % no tocline
   [\xiaosan]
-  [\quad] % 此处控制英文摘要标题的字体
+  [] % 此处控制英文摘要标题
   {    
     \sihao[1.428]
     \par{%
@@ -3959,12 +3975,12 @@ FUNCTION {initialize.widest.label} {
 
 % 普通图书
 % [序号] 作者. 专著名[M].{ 译者, 译.}{ 版本（第一版不加标注）.} 出版地: 出版者, 年{: 参考页码}.{ note.}
-% [] author. booktitle[M].{ translator, 译}{ edition.} address: publisher, year{: pages}.{ note.}
+% [] author. title[M].{ translator, 译}{ edition.} address: publisher, year{: pages}.{ note.}
 FUNCTION {book} {
   generate.bibitem.begin
 
   format.authors "author" output.w.warning
-  format.booktitle "[M]" "booktitle" output.w.appendix.w.warning
+  format.title "[M]" "title" output.w.appendix.w.warning
   format.translator punc.comma "译" * output.w.appendix.wo.warning
   format.edition output.wo.warning
   format.address.publisher.year.pages output.wo.warning
@@ -4781,7 +4797,7 @@ EXECUTE { show.banner.end }             % 显示完成提示信息
     \hline
     秘书     &                                &       &             \\
     \hline
-    答辩日期 & \multicolumn{3}{|c|}{2023.05.13}                       \\
+    答辩日期 & \multicolumn{3}{c|}{2023.05.13}                       \\
     \hline
   \end{tabular}
 \end{table*}
