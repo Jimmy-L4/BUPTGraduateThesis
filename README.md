@@ -1,6 +1,6 @@
 About New
 ==================
-BUPTGraduateThesis原始版本是由[BUPTGraduateThesis](https://github.com/rioxwang/BUPTGraduateThesis.git)仓库提供,但该项目在2020后停止了更新，为了继续推动此文档的发展，本项目在原有基础上做出修改，具体修改内容请查看Commits。因个人能力有限，如有疏漏，请提PR或直接指正：licm@bupt.edu.cn
+BUPTGraduateThesis原始版本是由[BUPTGraduateThesis](https://github.com/rioxwang/BUPTGraduateThesis.git)仓库提供,但该项目在2020后停止了更新，为了继续推动此文档的发展，本项目在原有基础上做出修改，具体修改内容请查看Commits。因个人能力有限，如有疏漏，请提PR。
 
 v8.2：根据2024年北京邮电大学研究生学位论文写作与制作规范，同步修改一下内容：
 * 页眉居中
